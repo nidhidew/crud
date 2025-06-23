@@ -73,3 +73,12 @@ function editUser(index){
 
 ## What is LocalStorage and how to add localStorage so data persists on page reload
 
+* localstorage stores data in the browser.
+* it survives page reloads and browser restarts.
+* it only stores strings, so use JSON.stringify() to save and JSON.parse() to retrieve arrays and objects.
+* load users from `localStorage` when the page loads.
+* save users to `localStorage` after adding/updating/deleting.
+* use `JSON.stringify()` and `JSON.parse()`.
+* so `saveUsers()` + `localStorage.setItem()` stores array as a string.
+* `JSON.parse(localStorage.getItem())` converts string back to array.
+* `renderUsers()` shows saved users after parsing on page load.

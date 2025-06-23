@@ -1,4 +1,4 @@
-let users = [];
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
 const form = document.getElementById("userForm");
 const userList = document.getElementById("userList");
@@ -11,7 +11,7 @@ form.addEventListener("submit", function(e){
 
     if(name && email){
         users.push({ name,email });
-        console.log(users);
+        saveUsers();
         renderUser();
         form.reset();
     }
@@ -34,6 +34,7 @@ function renderUser(){
 //delete
 function deleteUser(index){
     users.splice(index, 1);
+    saveUsers();
     renderUser();
 }
 
@@ -43,6 +44,13 @@ function editUser(index){
     document.getElementById("name").value = user.name;
     document.getElementById("email").value = user.email;
 
-    users.splice(index,1)
+    users.splice(index,1);
+    saveUsers();
     renderUser();
 }
+
+function saveUsers(){
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+renderUser();//initial render on page load
