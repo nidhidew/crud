@@ -1,5 +1,6 @@
 # crud_table
 
+## What is CRUD and build a simple CRUD APP using Javascript
 * CRUD stands for Create, Read, Update and Delete.
 * To build CRUD app using javascript, 1st create a html page to create data and manage that data.
 * in the html page we will create input fields to create data.
@@ -69,3 +70,6 @@ function editUser(index){
     renderUser();
 }
 ```
+
+## What is LocalStorage and how to add localStorage so data persists on page reload
+
